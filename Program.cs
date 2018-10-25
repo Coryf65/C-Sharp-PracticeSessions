@@ -38,8 +38,29 @@ namespace C_Sharp_PracticeSessions
             // arrays 
             int[] lockcombination = new int[3];
 
-            Console.WriteLine(lockcombination);
-        #endregion
+            Console.WriteLine(string.Join(",", lockcombination));
+
+            // do not need to specify length
+            int[] lockcombination2 = new int[] { 10, 5, 32 };
+
+            Console.WriteLine(string.Join(",", lockcombination2));
+
+            // or specify type or use new
+            int[] lockcombination3 = { 40, 55, 62 };
+
+            Console.WriteLine(string.Join(",", lockcombination3));
+
+            // selecting an item from an array saved as a var
+            int last = lockcombination3[2];
+
+            Console.WriteLine("Last item of lockcombination3 = " + last);
+
+            // changing the last item from lockcombination3 ...
+            lockcombination3[2] = 20;
+
+            Console.WriteLine("Last item of lockcombination3 is changed to = " + lockcombination3[2]);
+
+            #endregion
 
 
         }

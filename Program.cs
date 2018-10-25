@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace C_Sharp_PracticeSessions
 {
@@ -11,7 +12,7 @@ namespace C_Sharp_PracticeSessions
         static void Main(string[] args)
         {
 
-        #region "Part of Objects Practice"
+            #region "Part of Objects Practice"
 
             //Console.WriteLine("C# Practice..." + "\r\n");
 
@@ -32,9 +33,10 @@ namespace C_Sharp_PracticeSessions
 
             #endregion
 
+            // C# Collections
 
-        #region "Part of Arrays Practice"
-            
+            #region "Part of Arrays Practice"
+
             // arrays 
             //int[] lockcombination = new int[3];
 
@@ -63,9 +65,9 @@ namespace C_Sharp_PracticeSessions
             #endregion
 
 
-        #region"Multi dimensional Arrays"
+            #region"Multi dimensional Arrays"
 
-         // using Jagged Arrays Far more common
+            // using Jagged Arrays Far more common
 
             // added class Cell
             //creating an array of cells, like a Spreadsheet
@@ -100,65 +102,44 @@ namespace C_Sharp_PracticeSessions
             //}
 
 
-         // Using 2D arrays 
+            // Using 2D arrays 
 
 
             //                   Cell[Row, Columns]
-            Cell[,] sheet2 = new Cell[100, 10];     
+            //Cell[,] sheet2 = new Cell[100, 10];     
 
-            // showing an spot in that array
-            Console.WriteLine("Showing sheet2's 0,0 spot: " + sheet2[0,0]);
+            //// showing an spot in that array
+            //Console.WriteLine("Showing sheet2's 0,0 spot: " + sheet2[0,0]);
 
-            // 3 dem array Jagged style
-            Cell[][][] sheet3 = new Cell[100][][];
+            //// 3 dem array Jagged style
+            //Cell[][][] sheet3 = new Cell[100][][];
 
-            // 3 dim multi style
-            int[,,] threeDimMatrix = new int[5, 5, 5];
+            //// 3 dim multi style
+            //int[,,] threeDimMatrix = new int[5, 5, 5];
 
+
+
+            #endregion
+
+
+            #region "Lists"
+
+            //Generic type
             
+            // list of strings
+            List<String> students = new List<string>();
+
+            students.Add("Sue");
+            students.Add("Bill");
+            students.Add("Alan");
+
+            Console.WriteLine("How many students: " + students.Count);
+
+            // a list is pretty much a wrapper around an array and can grow as much as we need
 
             #endregion
 
         }
 
-        // an example of looping through an multi array
-        public static int[,] BuildMultiplicationTable(int maxFactor)
-        {
-            //Since we know that we need to include zero, assuming maxFactor = 3, our rows and
-            //columns will go from 0 to 3. So, they will both have a length of 4 (0 1 2 3).
-            //So, we always need to add one to maxFactor to account for zero.
-            var maxFactorPlusOne = maxFactor + 1;
-
-            //Declare a (2-dimensional) multidimensional array with the right amount of rows and columns.
-            int[,] multiplicationTable = new int[maxFactorPlusOne, maxFactorPlusOne];
-
-            //The outer loop will iterate the rows (0 1 2 3).
-            for (int row = 0; row < maxFactorPlusOne; row++)
-            {
-                //The inner loop will iterate the columns (0 1 2 3).
-                for (int column = 0; column < maxFactorPlusOne; column++)
-                {
-                    multiplicationTable[row, column] = row * column;
-                }
-            }
-            return multiplicationTable;
-        }
-
-        // Array downfalls
-        // copying everything every time we want to add an item is very inefficient and
-        // can slow down a computer program if we do this a lot.
-        // We also run into the same sort of troubles when we want to remove
-        // items from an array.
-        // In that case we need to shift all of the items after the removed item
-        // over by one to fill in the missing index.
-        // As you can imagine, this makes removing items from an array very slow.
-        // Although arrays are very fast for retrieving and
-        // setting items, they're the slowest collection for adding or removing items.
-        // Due to the difficulty in adding, removing and
-        // resizing, arrays are rarely used directly like this in C#.
-        // Instead there's a collection type that works just like an array, but
-        // it takes care of all this copying for us.
-        // This makes it easier to add and remove items.
-        // This collection is called a list.
     }
 }

@@ -137,6 +137,15 @@ namespace C_Sharp_PracticeSessions
 
             // a list is pretty much a wrapper around an array and can grow as much as we need
 
+            // so the List type save one spot extra
+            Console.WriteLine("Total number of spots in students List: " + students.Capacity);
+
+            // you could preset the total number of saved spots 100 if you are off it can still add more
+            List<String> students2 = new List<string>(100);
+
+            // Lists are the most common collection type
+
+
             #endregion
 
         }

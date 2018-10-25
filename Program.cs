@@ -143,5 +143,22 @@ namespace C_Sharp_PracticeSessions
             }
             return multiplicationTable;
         }
+
+        // Array downfalls
+        // copying everything every time we want to add an item is very inefficient and
+        // can slow down a computer program if we do this a lot.
+        // We also run into the same sort of troubles when we want to remove
+        // items from an array.
+        // In that case we need to shift all of the items after the removed item
+        // over by one to fill in the missing index.
+        // As you can imagine, this makes removing items from an array very slow.
+        // Although arrays are very fast for retrieving and
+        // setting items, they're the slowest collection for adding or removing items.
+        // Due to the difficulty in adding, removing and
+        // resizing, arrays are rarely used directly like this in C#.
+        // Instead there's a collection type that works just like an array, but
+        // it takes care of all this copying for us.
+        // This makes it easier to add and remove items.
+        // This collection is called a list.
     }
 }

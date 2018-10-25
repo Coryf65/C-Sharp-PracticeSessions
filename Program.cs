@@ -65,9 +65,9 @@ namespace C_Sharp_PracticeSessions
 
         #region"Multi dimensional Arrays"
 
-            //added class Cell
-            // using Jagged Arrays
+        // using Jagged Arrays
 
+            // added class Cell
             //creating an array of cells, like a Spreadsheet
 
             Cell[][] sheet = new Cell[100][];
@@ -99,6 +99,10 @@ namespace C_Sharp_PracticeSessions
                 Console.WriteLine();
             }
 
+
+
+
+        // Using 2D arrays 
 
         #endregion
 

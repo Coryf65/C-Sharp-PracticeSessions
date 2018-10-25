@@ -11,7 +11,7 @@ namespace C_Sharp_PracticeSessions
         static void Main(string[] args)
         {
 
-            #region "Part of Objects Practice"
+        #region "Part of Objects Practice"
 
             //Console.WriteLine("C# Practice..." + "\r\n");
 
@@ -62,6 +62,45 @@ namespace C_Sharp_PracticeSessions
 
             #endregion
 
+
+        #region"Multi dimensional Arrays"
+
+            //added class Cell
+            // using Jagged Arrays
+
+            //creating an array of cells, like a Spreadsheet
+
+            Cell[][] sheet = new Cell[100][];
+
+            // now to visualize
+            Console.WriteLine(sheet);
+
+            // creating a 1000 cells inside of an array
+            for (int rowIndex = 0; rowIndex < sheet.Length; rowIndex++)
+            {
+                sheet[rowIndex] = new Cell[10]; // create a row of 10 cells
+
+                for (int colIndex = 0; colIndex < sheet[rowIndex].Length; colIndex++)
+                {
+                    sheet[rowIndex][colIndex] = new Cell();
+                }
+            }
+
+            // output
+
+
+            // now using a for each loop instead
+            foreach  (Cell[] row in sheet)
+            {
+                foreach (Cell cell in row)
+                {
+                    Console.Write(cell);
+                }
+                Console.WriteLine();
+            }
+
+
+        #endregion
 
         }
     }

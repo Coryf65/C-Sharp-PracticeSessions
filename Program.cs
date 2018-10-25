@@ -36,76 +36,112 @@ namespace C_Sharp_PracticeSessions
         #region "Part of Arrays Practice"
             
             // arrays 
-            int[] lockcombination = new int[3];
+            //int[] lockcombination = new int[3];
 
-            Console.WriteLine(string.Join(",", lockcombination));
+            //Console.WriteLine(string.Join(",", lockcombination));
 
-            // do not need to specify length
-            int[] lockcombination2 = new int[] { 10, 5, 32 };
+            //// do not need to specify length
+            //int[] lockcombination2 = new int[] { 10, 5, 32 };
 
-            Console.WriteLine(string.Join(",", lockcombination2));
+            //Console.WriteLine(string.Join(",", lockcombination2));
 
-            // or specify type or use new
-            int[] lockcombination3 = { 40, 55, 62 };
+            //// or specify type or use new
+            //int[] lockcombination3 = { 40, 55, 62 };
 
-            Console.WriteLine(string.Join(",", lockcombination3));
+            //Console.WriteLine(string.Join(",", lockcombination3));
 
-            // selecting an item from an array saved as a var
-            int last = lockcombination3[2];
+            //// selecting an item from an array saved as a var
+            //int last = lockcombination3[2];
 
-            Console.WriteLine("Last item of lockcombination3 = " + last);
+            //Console.WriteLine("Last item of lockcombination3 = " + last);
 
-            // changing the last item from lockcombination3 ...
-            lockcombination3[2] = 20;
+            //// changing the last item from lockcombination3 ...
+            //lockcombination3[2] = 20;
 
-            Console.WriteLine("Last item of lockcombination3 is changed to = " + lockcombination3[2]);
+            //Console.WriteLine("Last item of lockcombination3 is changed to = " + lockcombination3[2]);
 
             #endregion
 
 
         #region"Multi dimensional Arrays"
 
-        // using Jagged Arrays
+         // using Jagged Arrays Far more common
 
             // added class Cell
             //creating an array of cells, like a Spreadsheet
 
-            Cell[][] sheet = new Cell[100][];
+            //Cell[][] sheet = new Cell[100][];
 
-            // now to visualize
-            Console.WriteLine(sheet);
+            //// now to visualize
+            //Console.WriteLine(sheet);
 
-            // creating a 1000 cells inside of an array
-            for (int rowIndex = 0; rowIndex < sheet.Length; rowIndex++)
+            //// creating a 1000 cells inside of an array
+            //for (int rowIndex = 0; rowIndex < sheet.Length; rowIndex++)
+            //{
+            //    sheet[rowIndex] = new Cell[10]; // create a row of 10 cells
+
+            //    for (int colIndex = 0; colIndex < sheet[rowIndex].Length; colIndex++)
+            //    {
+            //        sheet[rowIndex][colIndex] = new Cell();
+            //    }
+            //}
+
+            //// output
+
+
+            //// now using a for each loop instead
+            //foreach  (Cell[] row in sheet)
+            //{
+            //    foreach (Cell cell in row)
+            //    {
+            //        Console.Write(cell);
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+         // Using 2D arrays 
+
+
+            //                   Cell[Row, Columns]
+            Cell[,] sheet2 = new Cell[100, 10];     
+
+            // showing an spot in that array
+            Console.WriteLine("Showing sheet2's 0,0 spot: " + sheet2[0,0]);
+
+            // 3 dem array Jagged style
+            Cell[][][] sheet3 = new Cell[100][][];
+
+            // 3 dim multi style
+            int[,,] threeDimMatrix = new int[5, 5, 5];
+
+            
+
+            #endregion
+
+        }
+
+        // an example of looping through an multi array
+        public static int[,] BuildMultiplicationTable(int maxFactor)
+        {
+            //Since we know that we need to include zero, assuming maxFactor = 3, our rows and
+            //columns will go from 0 to 3. So, they will both have a length of 4 (0 1 2 3).
+            //So, we always need to add one to maxFactor to account for zero.
+            var maxFactorPlusOne = maxFactor + 1;
+
+            //Declare a (2-dimensional) multidimensional array with the right amount of rows and columns.
+            int[,] multiplicationTable = new int[maxFactorPlusOne, maxFactorPlusOne];
+
+            //The outer loop will iterate the rows (0 1 2 3).
+            for (int row = 0; row < maxFactorPlusOne; row++)
             {
-                sheet[rowIndex] = new Cell[10]; // create a row of 10 cells
-
-                for (int colIndex = 0; colIndex < sheet[rowIndex].Length; colIndex++)
+                //The inner loop will iterate the columns (0 1 2 3).
+                for (int column = 0; column < maxFactorPlusOne; column++)
                 {
-                    sheet[rowIndex][colIndex] = new Cell();
+                    multiplicationTable[row, column] = row * column;
                 }
             }
-
-            // output
-
-
-            // now using a for each loop instead
-            foreach  (Cell[] row in sheet)
-            {
-                foreach (Cell cell in row)
-                {
-                    Console.Write(cell);
-                }
-                Console.WriteLine();
-            }
-
-
-
-
-        // Using 2D arrays 
-
-        #endregion
-
+            return multiplicationTable;
         }
     }
 }

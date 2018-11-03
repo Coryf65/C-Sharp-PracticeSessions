@@ -123,7 +123,6 @@ namespace C_Sharp_PracticeSessions
 
 
             #region "Collections Lists"
-
             //Generic type
             
             // list of strings
@@ -203,11 +202,9 @@ namespace C_Sharp_PracticeSessions
             Console.WriteLine("Finding and Removing Tom");
             var success = students3.Remove("Tom");
 
-            Console.WriteLine("Did it work? {0}", success);
+            Console.WriteLine("Did it work? {0}", success);         
 
-            #endregion
-
-            // Test 1
+            // Test 1, make a function that gets the powers of 2 to any given #
             Console.WriteLine("Calling GetPowersOf2...");
 
             List<int> powerList = GetPowersOf2(4);
@@ -220,6 +217,26 @@ namespace C_Sharp_PracticeSessions
                 Console.WriteLine(" {0}", powerList[i]);
 
             }
+
+            ///// Sorting Lists
+
+            Console.WriteLine("Original Students 3...");
+
+            for (int i = 0; i < students3.Count; i++)
+            {
+                Console.WriteLine(" {0}", students3[i]);
+            }
+
+            Console.WriteLine("Sorting Student3...");
+
+            students3.Sort();
+
+            for (int i = 0; i < students3.Count; i++)
+            {
+                Console.WriteLine(" {0}", students3[i]);
+            }
+
+            #endregion
         }
 
         // Test 1

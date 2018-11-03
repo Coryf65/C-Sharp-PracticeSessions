@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using System.Collections;
 
 namespace C_Sharp_PracticeSessions
 {
@@ -144,8 +144,52 @@ namespace C_Sharp_PracticeSessions
             List<String> students2 = new List<string>(100);
 
             // Lists are the most common collection type
+            List<int> lockCombination = new List<int>();
 
+            Console.WriteLine("Lock Combination: " + lockCombination.ToString());
 
+            Console.WriteLine("Lock Combination Contents: ");
+            // print out the contents
+            for (int i = 0; i < lockCombination.Count; i++)
+            {
+                
+                    Console.WriteLine(" {0}", lockCombination[i]);    
+                
+            }
+
+            lockCombination.Add(12);
+
+            Console.WriteLine("adding 12: ");
+            // print out the contents
+            for (int i = 0; i < lockCombination.Count; i++)
+            {
+
+                Console.WriteLine(" {0}", lockCombination[i]);
+
+            }
+
+            lockCombination.Add(42);
+
+            Console.WriteLine("adding 42: ");
+            // print out the contents
+            for (int i = 0; i < lockCombination.Count; i++)
+            {
+
+                Console.WriteLine(" {0}", lockCombination[i]);
+
+            }
+            lockCombination.Add(13);
+
+            Console.WriteLine("adding 13: ");
+            // print out the contents
+            for (int i = 0; i < lockCombination.Count; i++)
+            {
+
+                Console.WriteLine(" {0}", lockCombination[i]);
+
+            }
+
+            Console.WriteLine("What is the Capacity Now?  {0}", lockCombination.Capacity);
             #endregion
 
         }

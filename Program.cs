@@ -190,7 +190,27 @@ namespace C_Sharp_PracticeSessions
             }
 
             Console.WriteLine("What is the Capacity Now?  {0}", lockCombination.Capacity);
+
+
+            // Finding and removing an item from the list, without knowing where in the list it is.
+
+            // creating a list and finding a string then removing it.
+            List <string> students3 = new List<string>() { "Sue", "Frank", "Joe", "Betsy", "Tom", "Simon", "Jill", "Tommy", "Mary", "Armuro" };
+
+            // trying to find and remove Tom
+            Console.WriteLine("Finding and Removing Tom");
+            var success = students3.Remove("Tom");
+
+            Console.WriteLine("Did it work? {0}", success);
+
+
+
+
+
+
             #endregion
+
+
 
         }
 

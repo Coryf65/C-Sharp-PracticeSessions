@@ -122,7 +122,7 @@ namespace C_Sharp_PracticeSessions
             #endregion
 
 
-            #region "Lists"
+            #region "Collections Lists"
 
             //Generic type
             
@@ -198,6 +198,8 @@ namespace C_Sharp_PracticeSessions
             List <string> students3 = new List<string>() { "Sue", "Frank", "Joe", "Betsy", "Tom", "Simon", "Jill", "Tommy", "Mary", "Armuro" };
 
             // trying to find and remove Tom
+            // if we have more than 1 Tom, it would remove the first occurence
+            // this can be slow if the list is long
             Console.WriteLine("Finding and Removing Tom");
             var success = students3.Remove("Tom");
 

@@ -205,16 +205,46 @@ namespace C_Sharp_PracticeSessions
 
             Console.WriteLine("Did it work? {0}", success);
 
-
-
-
-
-
             #endregion
 
+            // Test 1
+            Console.WriteLine("Calling GetPowersOf2...");
 
+            List<int> powerList = GetPowersOf2(4);
 
+            Console.WriteLine("Printing out the List... ");
+            // print out the contents
+            for (int i = 0; i < powerList.Count; i++)
+            {
+
+                Console.WriteLine(" {0}", powerList[i]);
+
+            }
         }
 
+        // Test 1
+        // Create a static method named GetPowersOf2 that returns a list of integers
+        // of type List<int> containing the powers of 2 from 0 to the value passed in. 
+        // For example, if 4 is passed in, the method should return this list
+        // of integers: { 1, 2, 4, 8, 16 }. The System.Math.Pow method will come in handy.
+        public static List<int> GetPowersOf2(int endRange)
+        {
+            //passing to the range of what?
+            List<int> list = new List<int>();
+            int end;
+
+            int value = 2;
+            for (int power = 0; power <= endRange; power++)
+            {
+                //Console.WriteLine("{0}^{1} = {2}", value, power, (long)Math.Pow(value, power));
+
+                //Console.WriteLine("{0}^{1} = {2:N0} (0x{2:X})", value, power, (long)Math.Pow(value, power));
+            end = (int)Math.Pow(value, power);
+                list.Add(end);
+            }               
+
+            return list;
+        }
+       
     }
 }

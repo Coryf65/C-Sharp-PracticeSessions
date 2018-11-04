@@ -236,6 +236,29 @@ namespace C_Sharp_PracticeSessions
                 Console.WriteLine(" {0}", students3[i]);
             }
 
+            ///// Now Creating a Student Object
+            // the Student.cs
+
+            Console.WriteLine("Creating Student Object");
+
+            List<Student> kiddos = new List<Student>
+            {
+                new Student() { Name = "Sally", GradLevel = 3 },
+                new Student() { Name = "Bob", GradLevel = 3 },
+                new Student() { Name = "Sally", GradLevel = 2 }
+            };
+
+            Console.WriteLine("Sorting... Student Object");
+
+            kiddos.Sort();
+
+            Console.WriteLine("Printing... Student Object");
+
+            foreach (Student student in kiddos)
+            {
+                Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
+            }
+
             #endregion
         }
 

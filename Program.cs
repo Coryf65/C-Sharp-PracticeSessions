@@ -259,6 +259,42 @@ namespace C_Sharp_PracticeSessions
                 Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
             }
 
+
+            ///// Searching Sorted Lists
+
+            // We can greatly increase the speed of searching a list by sorting it first
+            // We search it after we Sort, using Binary Search can be faster 
+
+            // 
+
+            Student newStudent = new Student() { Name = "Joe", GradLevel = 2 };
+
+            Console.WriteLine("Finding Joe...");
+
+            // if "Joe" is in the list the result will be a positive int
+            int index = kiddos.BinarySearch(newStudent);
+
+
+            // the negative number is its int and -1
+            if (index < 0)
+            {
+                Console.WriteLine("Adding Joe...");
+
+                //  the bitwise compliment
+                kiddos.Insert((-index)-1, newStudent);
+                // could also do it with the special Operator "~"
+                // kiddos.Insert(~index, newStudent              
+            }
+            else
+            {
+                Console.WriteLine("Found Joe...");
+            }
+
+            foreach (Student student in kiddos)
+            {
+                Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
+            }
+
             #endregion
         }
 

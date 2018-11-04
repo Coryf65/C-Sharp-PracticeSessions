@@ -296,6 +296,21 @@ namespace C_Sharp_PracticeSessions
             }
 
             #endregion
+
+            #region "Collection Interfaces"
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("--------------- Collection Interfaces ---------------");
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+            // every collection type inherits ICollection, and IEnumerable
+
+            // creating a class SchoolRoll
+
+
+            #endregion
         }
 
         // Test 1

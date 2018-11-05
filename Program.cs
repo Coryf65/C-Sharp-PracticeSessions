@@ -348,10 +348,85 @@ namespace C_Sharp_PracticeSessions
 
             //start
 
+            // creating a Hashset, from the List, passing in the List to the constructor
+            HashSet<Student> students = new HashSet<Student>(new List<Student>
+            {
+                new Student() { Name = "Sally", GradLevel = 3 },
+                new Student() { Name = "Bob", GradLevel = 3 },
+                new Student() { Name = "Sally", GradLevel = 2 },
+            });
+
+            //adding a new student to the list
+            Student joe = new Student() { Name = "Joe", GradLevel = 2 };
+
+            //adding a new student to the list
+            students.Add(joe);
+
+            // a hashset does not allow duplicates
+
+            // creating a new dupe joe
+            Student duplicateJoe = new Student() { Name = "Joe", GradLevel = 2 };
+
+            // adding this joe to the list
+            students.Add(duplicateJoe);
+
+            // showing their hash codes
+            // the GetHashCode() gives each object a SEMI unique hashcode
+            Console.WriteLine("joe's hash code: " + joe.GetHashCode());
+            Console.WriteLine("duplicateJoe's hash code: " + duplicateJoe.GetHashCode());
+
+            // BUT we want to say that both of these objects are the same... So
+            // we will override this method and fix it.
+            // Creating new method, GetHashCode()
+
+
+            // $ = Interpolated Strings
+            foreach (Student student in students)
+            {
+                Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             #endregion
         }
+
+
+
+        /// <summary>
+        ///  Trying to not add the same student
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            // we will check against the name and grade value
+            // IF we were rutrning the students from a db. it would have a unique ID already            
+
+            return Name.GetHashCode() + GradeLevel.GetHYashCode();
+        }
+
 
         // Test 1
         // Create a static method named GetPowersOf2 that returns a list of integers

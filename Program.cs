@@ -371,9 +371,12 @@ namespace C_Sharp_PracticeSessions
             students.Add(duplicateJoe);
 
             // showing their hash codes
-            // the GetHashCode() gives each object a SEMI unique hashcode
-            Console.WriteLine("joe's hash code: " + joe.GetHashCode());
-            Console.WriteLine("duplicateJoe's hash code: " + duplicateJoe.GetHashCode());
+            // changed to contains using the Iinterface
+            if (students.Contains(joe))
+            {
+                // contains on a hashset looks at the Hashcodes on aa hashset
+                Console.WriteLine("finding joe!....");
+            }
 
             // BUT we want to say that both of these objects are the same... So
             // we will override this method and fix it.

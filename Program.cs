@@ -327,7 +327,7 @@ namespace C_Sharp_PracticeSessions
             schoolRoll.AddStudents(students);
 
             // $ = Interpolated Strings
-            foreach (Student student in schoolRoll.)
+            foreach (Student student in schoolRoll.Students)
             {
                 Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
             }

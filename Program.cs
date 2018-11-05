@@ -124,7 +124,7 @@ namespace C_Sharp_PracticeSessions
 
             #region "Collections Lists"
             ////Generic type
-            
+
             //// list of strings
             //List<String> students = new List<string>();
 
@@ -151,9 +151,9 @@ namespace C_Sharp_PracticeSessions
             //// print out the contents
             //for (int i = 0; i < lockCombination.Count; i++)
             //{
-                
+
             //        Console.WriteLine(" {0}", lockCombination[i]);    
-                
+
             //}
 
             //lockCombination.Add(12);
@@ -299,38 +299,56 @@ namespace C_Sharp_PracticeSessions
 
             #region "Collection Interfaces"
 
+            //Console.Clear();
+            //Console.ForegroundColor = ConsoleColor.Green;
+            //Console.WriteLine("--------------- Collection Interfaces ---------------");
+
+            //Console.ForegroundColor = ConsoleColor.Blue;
+
+            //// every collection type inherits ICollection, and IEnumerable
+
+            //// creating a class SchoolRoll
+
+            ////Read-only Collection Interfaces
+            //Console.WriteLine("//// Read-only Collection Interfaces");
+
+            ////just for console seperation
+            //Console.ForegroundColor = ConsoleColor.White;
+
+
+            //List<Student> students = new List<Student>
+            //{
+            //    new Student() { Name = "Sally", GradLevel = 3 },
+            //    new Student() { Name = "Bob", GradLevel = 3 },
+            //    new Student() { Name = "Sally", GradLevel = 2 },
+            //};
+
+            //SchoolRoll schoolRoll = new SchoolRoll();
+            //schoolRoll.AddStudents(students);
+
+            //// $ = Interpolated Strings
+            //foreach (Student student in schoolRoll.Students)
+            //{
+            //    Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
+            //}
+
+            #endregion
+
+            #region "Sets And Dictionaries"
+
+            // New section start
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("--------------- Collection Interfaces ---------------");
-
-            Console.ForegroundColor = ConsoleColor.Blue;
-
-            // every collection type inherits ICollection, and IEnumerable
-
-            // creating a class SchoolRoll
-
-            //Read-only Collection Interfaces
-            Console.WriteLine("//// Read-only Collection Interfaces");
-
+            Console.WriteLine("--------------- Sets And Dictionaries ---------------");
+            Console.ForegroundColor = ConsoleColor.Blue; 
+            //First Set of exapmples
+            Console.WriteLine("//// Hashsets");
             //just for console seperation
             Console.ForegroundColor = ConsoleColor.White;
 
+            //start
 
-            List<Student> students = new List<Student>
-            {
-                new Student() { Name = "Sally", GradLevel = 3 },
-                new Student() { Name = "Bob", GradLevel = 3 },
-                new Student() { Name = "Sally", GradLevel = 2 },
-            };
 
-            SchoolRoll schoolRoll = new SchoolRoll();
-            schoolRoll.AddStudents(students);
-
-            // $ = Interpolated Strings
-            foreach (Student student in schoolRoll.Students)
-            {
-                Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
-            }
 
             #endregion
         }

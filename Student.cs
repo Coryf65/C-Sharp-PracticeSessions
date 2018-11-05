@@ -49,7 +49,7 @@ namespace C_Sharp_PracticeSessions
             }
 
             // then it is a Student Object
-            return this.Name == that.Name && this.GradLevel == that.GradLevel;
+            return this.Name == that.Name && this.GradeLevel == that.GradeLevel;
         }
 
     }

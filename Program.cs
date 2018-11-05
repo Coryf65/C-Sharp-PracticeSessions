@@ -303,14 +303,31 @@ namespace C_Sharp_PracticeSessions
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("--------------- Collection Interfaces ---------------");
 
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Blue;
 
             // every collection type inherits ICollection, and IEnumerable
 
             // creating a class SchoolRoll
 
             //Read-only Collection Interfaces
-            Console.WriteLine("~~~ Read-only Collection Interfaces ~~~");
+            Console.WriteLine("//// Read-only Collection Interfaces");
+
+            //just for console seperation
+            Console.ForegroundColor = ConsoleColor.White;
+
+
+            List<Student> students = new List<Student>
+            {
+                new Student() { Name = "Sally", GradLevel = 3 },
+                new Student() { Name = "Bob", GradLevel = 3 },
+                new Student() { Name = "Sally", GradLevel = 2 },
+            };
+
+            // $ = Interpolated Strings
+            foreach (Student student in students)
+            {
+                Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
+            }
 
             #endregion
         }

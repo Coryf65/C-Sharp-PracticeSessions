@@ -10,6 +10,9 @@ namespace C_Sharp_PracticeSessions
     {
         private List<Student> _students = new List<Student>();
 
+        //Use read-only collection interfaces and collection types to control who can alter the collection.
+        public IEnumerable<Student> Students { get { return _students; } }
+
         // But what if they had an array and wanted to pass that in
         // Then they would have to convert to a list
 

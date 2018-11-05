@@ -323,8 +323,11 @@ namespace C_Sharp_PracticeSessions
                 new Student() { Name = "Sally", GradLevel = 2 },
             };
 
+            SchoolRoll schoolRoll = new SchoolRoll();
+            schoolRoll.AddStudents(students);
+
             // $ = Interpolated Strings
-            foreach (Student student in students)
+            foreach (Student student in schoolRoll.)
             {
                 Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
             }

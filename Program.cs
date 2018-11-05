@@ -123,177 +123,177 @@ namespace C_Sharp_PracticeSessions
 
 
             #region "Collections Lists"
-            //Generic type
+            ////Generic type
             
-            // list of strings
-            List<String> students = new List<string>();
+            //// list of strings
+            //List<String> students = new List<string>();
 
-            students.Add("Sue");
-            students.Add("Bill");
-            students.Add("Alan");
+            //students.Add("Sue");
+            //students.Add("Bill");
+            //students.Add("Alan");
 
-            Console.WriteLine("How many students: " + students.Count);
+            //Console.WriteLine("How many students: " + students.Count);
 
-            // a list is pretty much a wrapper around an array and can grow as much as we need
+            //// a list is pretty much a wrapper around an array and can grow as much as we need
 
-            // so the List type save one spot extra
-            Console.WriteLine("Total number of spots in students List: " + students.Capacity);
+            //// so the List type save one spot extra
+            //Console.WriteLine("Total number of spots in students List: " + students.Capacity);
 
-            // you could preset the total number of saved spots 100 if you are off it can still add more
-            List<String> students2 = new List<string>(100);
+            //// you could preset the total number of saved spots 100 if you are off it can still add more
+            //List<String> students2 = new List<string>(100);
 
-            // Lists are the most common collection type
-            List<int> lockCombination = new List<int>();
+            //// Lists are the most common collection type
+            //List<int> lockCombination = new List<int>();
 
-            Console.WriteLine("Lock Combination: " + lockCombination.ToString());
+            //Console.WriteLine("Lock Combination: " + lockCombination.ToString());
 
-            Console.WriteLine("Lock Combination Contents: ");
-            // print out the contents
-            for (int i = 0; i < lockCombination.Count; i++)
-            {
+            //Console.WriteLine("Lock Combination Contents: ");
+            //// print out the contents
+            //for (int i = 0; i < lockCombination.Count; i++)
+            //{
                 
-                    Console.WriteLine(" {0}", lockCombination[i]);    
+            //        Console.WriteLine(" {0}", lockCombination[i]);    
                 
-            }
+            //}
 
-            lockCombination.Add(12);
+            //lockCombination.Add(12);
 
-            Console.WriteLine("adding 12: ");
-            // print out the contents
-            for (int i = 0; i < lockCombination.Count; i++)
-            {
+            //Console.WriteLine("adding 12: ");
+            //// print out the contents
+            //for (int i = 0; i < lockCombination.Count; i++)
+            //{
 
-                Console.WriteLine(" {0}", lockCombination[i]);
+            //    Console.WriteLine(" {0}", lockCombination[i]);
 
-            }
+            //}
 
-            lockCombination.Add(42);
+            //lockCombination.Add(42);
 
-            Console.WriteLine("adding 42: ");
-            // print out the contents
-            for (int i = 0; i < lockCombination.Count; i++)
-            {
+            //Console.WriteLine("adding 42: ");
+            //// print out the contents
+            //for (int i = 0; i < lockCombination.Count; i++)
+            //{
 
-                Console.WriteLine(" {0}", lockCombination[i]);
+            //    Console.WriteLine(" {0}", lockCombination[i]);
 
-            }
-            lockCombination.Add(13);
+            //}
+            //lockCombination.Add(13);
 
-            Console.WriteLine("adding 13: ");
-            // print out the contents
-            for (int i = 0; i < lockCombination.Count; i++)
-            {
+            //Console.WriteLine("adding 13: ");
+            //// print out the contents
+            //for (int i = 0; i < lockCombination.Count; i++)
+            //{
 
-                Console.WriteLine(" {0}", lockCombination[i]);
+            //    Console.WriteLine(" {0}", lockCombination[i]);
 
-            }
+            //}
 
-            Console.WriteLine("What is the Capacity Now?  {0}", lockCombination.Capacity);
-
-
-            // Finding and removing an item from the list, without knowing where in the list it is.
-
-            // creating a list and finding a string then removing it.
-            List <string> students3 = new List<string>() { "Sue", "Frank", "Joe", "Betsy", "Tom", "Simon", "Jill", "Tommy", "Mary", "Armuro" };
-
-            // trying to find and remove Tom
-            // if we have more than 1 Tom, it would remove the first occurence
-            // this can be slow if the list is long
-            Console.WriteLine("Finding and Removing Tom");
-            var success = students3.Remove("Tom");
-
-            Console.WriteLine("Did it work? {0}", success);         
-
-            // Test 1, make a function that gets the powers of 2 to any given #
-            Console.WriteLine("Calling GetPowersOf2...");
-
-            List<int> powerList = GetPowersOf2(4);
-
-            Console.WriteLine("Printing out the List... ");
-            // print out the contents
-            for (int i = 0; i < powerList.Count; i++)
-            {
-
-                Console.WriteLine(" {0}", powerList[i]);
-
-            }
-
-            ///// Sorting Lists
-
-            Console.WriteLine("Original Students 3...");
-
-            for (int i = 0; i < students3.Count; i++)
-            {
-                Console.WriteLine(" {0}", students3[i]);
-            }
-
-            Console.WriteLine("Sorting Student3...");
-
-            students3.Sort();
-
-            for (int i = 0; i < students3.Count; i++)
-            {
-                Console.WriteLine(" {0}", students3[i]);
-            }
-
-            ///// Now Creating a Student Object
-            // the Student.cs
-
-            Console.WriteLine("Creating Student Object");
-
-            List<Student> kiddos = new List<Student>
-            {
-                new Student() { Name = "Sally", GradLevel = 3 },
-                new Student() { Name = "Bob", GradLevel = 3 },
-                new Student() { Name = "Sally", GradLevel = 2 }
-            };
-
-            Console.WriteLine("Sorting... Student Object");
-
-            kiddos.Sort();
-
-            Console.WriteLine("Printing... Student Object");
-
-            foreach (Student student in kiddos)
-            {
-                Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
-            }
+            //Console.WriteLine("What is the Capacity Now?  {0}", lockCombination.Capacity);
 
 
-            ///// Searching Sorted Lists
+            //// Finding and removing an item from the list, without knowing where in the list it is.
 
-            // We can greatly increase the speed of searching a list by sorting it first
-            // We search it after we Sort, using Binary Search can be faster 
+            //// creating a list and finding a string then removing it.
+            //List <string> students3 = new List<string>() { "Sue", "Frank", "Joe", "Betsy", "Tom", "Simon", "Jill", "Tommy", "Mary", "Armuro" };
 
-            // 
+            //// trying to find and remove Tom
+            //// if we have more than 1 Tom, it would remove the first occurence
+            //// this can be slow if the list is long
+            //Console.WriteLine("Finding and Removing Tom");
+            //var success = students3.Remove("Tom");
 
-            Student newStudent = new Student() { Name = "Joe", GradLevel = 2 };
+            //Console.WriteLine("Did it work? {0}", success);         
 
-            Console.WriteLine("Finding Joe...");
+            //// Test 1, make a function that gets the powers of 2 to any given #
+            //Console.WriteLine("Calling GetPowersOf2...");
 
-            // if "Joe" is in the list the result will be a positive int
-            int index = kiddos.BinarySearch(newStudent);
+            //List<int> powerList = GetPowersOf2(4);
+
+            //Console.WriteLine("Printing out the List... ");
+            //// print out the contents
+            //for (int i = 0; i < powerList.Count; i++)
+            //{
+
+            //    Console.WriteLine(" {0}", powerList[i]);
+
+            //}
+
+            /////// Sorting Lists
+
+            //Console.WriteLine("Original Students 3...");
+
+            //for (int i = 0; i < students3.Count; i++)
+            //{
+            //    Console.WriteLine(" {0}", students3[i]);
+            //}
+
+            //Console.WriteLine("Sorting Student3...");
+
+            //students3.Sort();
+
+            //for (int i = 0; i < students3.Count; i++)
+            //{
+            //    Console.WriteLine(" {0}", students3[i]);
+            //}
+
+            /////// Now Creating a Student Object
+            //// the Student.cs
+
+            //Console.WriteLine("Creating Student Object");
+
+            //List<Student> kiddos = new List<Student>
+            //{
+            //    new Student() { Name = "Sally", GradLevel = 3 },
+            //    new Student() { Name = "Bob", GradLevel = 3 },
+            //    new Student() { Name = "Sally", GradLevel = 2 }
+            //};
+
+            //Console.WriteLine("Sorting... Student Object");
+
+            //kiddos.Sort();
+
+            //Console.WriteLine("Printing... Student Object");
+
+            //foreach (Student student in kiddos)
+            //{
+            //    Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
+            //}
 
 
-            // the negative number is its int and -1
-            if (index < 0)
-            {
-                Console.WriteLine("Adding Joe...");
+            /////// Searching Sorted Lists
 
-                //  the bitwise compliment
-                kiddos.Insert((-index)-1, newStudent);
-                // could also do it with the special Operator "~"
-                // kiddos.Insert(~index, newStudent              
-            }
-            else
-            {
-                Console.WriteLine("Found Joe...");
-            }
+            //// We can greatly increase the speed of searching a list by sorting it first
+            //// We search it after we Sort, using Binary Search can be faster 
 
-            foreach (Student student in kiddos)
-            {
-                Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
-            }
+            //// 
+
+            //Student newStudent = new Student() { Name = "Joe", GradLevel = 2 };
+
+            //Console.WriteLine("Finding Joe...");
+
+            //// if "Joe" is in the list the result will be a positive int
+            //int index = kiddos.BinarySearch(newStudent);
+
+
+            //// the negative number is its int and -1
+            //if (index < 0)
+            //{
+            //    Console.WriteLine("Adding Joe...");
+
+            //    //  the bitwise compliment
+            //    kiddos.Insert((-index)-1, newStudent);
+            //    // could also do it with the special Operator "~"
+            //    // kiddos.Insert(~index, newStudent              
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Found Joe...");
+            //}
+
+            //foreach (Student student in kiddos)
+            //{
+            //    Console.WriteLine($"{student.Name} is in grade {student.GradLevel}");
+            //}
 
             #endregion
 
@@ -309,6 +309,8 @@ namespace C_Sharp_PracticeSessions
 
             // creating a class SchoolRoll
 
+            //Read-only Collection Interfaces
+            Console.WriteLine("~~~ Read-only Collection Interfaces ~~~");
 
             #endregion
         }

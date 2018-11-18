@@ -336,86 +336,67 @@ namespace C_Sharp_PracticeSessions
 
             #region "Sets And Dictionaries"
 
-            // New section start
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("--------------- Sets And Dictionaries ---------------");
-            Console.ForegroundColor = ConsoleColor.Blue; 
-            //First Set of exapmples
-            Console.WriteLine("//// Hashsets");
-            //just for console seperation
-            Console.ForegroundColor = ConsoleColor.White;
+                // New section start
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("--------------- Sets And Dictionaries ---------------");
+                Console.ForegroundColor = ConsoleColor.Blue; 
+                //First Set of exapmples
+                Console.WriteLine("//// Hashsets");
+                //just for console seperation
+                Console.ForegroundColor = ConsoleColor.White;
 
-            //start
+                //start
 
-            // creating a Hashset, from the List, passing in the List to the constructor
-            HashSet<Student> students = new HashSet<Student>(new List<Student>
-            {
-                new Student() { Name = "Sally", GradeLevel = 3 },
-                new Student() { Name = "Bob", GradeLevel = 3 },
-                new Student() { Name = "Sally", GradeLevel = 2 },
-            });
+                // creating a Hashset, from the List, passing in the List to the constructor
+                HashSet<Student> students = new HashSet<Student>(new List<Student>
+                {
+                    new Student() { Name = "Sally", GradeLevel = 3 },
+                    new Student() { Name = "Bob", GradeLevel = 3 },
+                    new Student() { Name = "Sally", GradeLevel = 2 },
+                });
 
-            //adding a new student to the list
-            Student joe = new Student() { Name = "Joe", GradeLevel = 2 };
+                //adding a new student to the list
+                Student joe = new Student() { Name = "Joe", GradeLevel = 2 };
 
-            //adding a new student to the list
-            students.Add(joe);
+                //adding a new student to the list
+                students.Add(joe);
 
-            // a hashset does not allow duplicates
+                // a hashset does not allow duplicates
 
-            // creating a new dupe joe
-            Student duplicateJoe = new Student() { Name = "Joe", GradeLevel = 2 };
+                // creating a new dupe joe
+                Student duplicateJoe = new Student() { Name = "Joe", GradeLevel = 2 };
 
-            // adding this joe to the list
-            students.Add(duplicateJoe);
+                // adding this joe to the list
+                students.Add(duplicateJoe);
 
-            // showing their hash codes
-            // changed to contains using the Iinterface
-            if (students.Contains(joe))
-            {
-                // contains on a hashset looks at the Hashcodes on aa hashset
-                Console.WriteLine("finding joe!....");
-            }
+                // showing their hash codes
+                // changed to contains using the Iinterface
+                if (students.Contains(joe))
+                {
+                    // contains on a hashset looks at the Hashcodes on aa hashset
+                    Console.WriteLine("finding joe!....");
+                }
 
-            // BUT we want to say that both of these objects are the same... So
-            // we will override this method and fix it.
-            // Creating new method, GetHashCode()
-
-
-            // $ = Interpolated Strings
-            foreach (Student student in students)
-            {
-                Console.WriteLine($"{student.Name} is in grade {student.GradeLevel}");
-            }
+                // BUT we want to say that both of these objects are the same... So
+                // we will override this method and fix it.
+                // Creating new method, GetHashCode()
 
 
+                // $ = Interpolated Strings
+                foreach (Student student in students)
+                {
+                    Console.WriteLine($"{student.Name} is in grade {student.GradeLevel}");
+                }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                // counting 
+                Console.WriteLine("how many in Hashset? " + students.Count());
 
 
 
             #endregion
         }
-      
+
 
         // Test 1
         // Create a static method named GetPowersOf2 that returns a list of integers

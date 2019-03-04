@@ -9,7 +9,11 @@ namespace C_Sharp_PracticeSessions
     class Album : MediaType
     {
         //field
-        public readonly string Artist;
+        //public readonly string Artist;
+
+        //changing this fiel to a prop
+        public string Artist { get; private set; }
+
 
         public Album(string title, string artist)
             : base(title)

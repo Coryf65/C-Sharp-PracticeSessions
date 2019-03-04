@@ -51,5 +51,17 @@ namespace C_Sharp_PracticeSessions
             OnLoan = true;
         }
 
+        public void Loan(string loanee)
+        {
+            Loanee = loanee;
+            Loan();
+        }
+
+        public void Return()
+        {
+            Loanee = null;
+            OnLoan = false;
+        }
+
     }
 }

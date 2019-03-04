@@ -336,66 +336,177 @@ namespace C_Sharp_PracticeSessions
 
             #region "Sets And Dictionaries"
 
-                // New section start
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("--------------- Sets And Dictionaries ---------------");
-                Console.ForegroundColor = ConsoleColor.Blue; 
-                //First Set of exapmples
-                Console.WriteLine("//// Hashsets");
-                //just for console seperation
-                Console.ForegroundColor = ConsoleColor.White;
+            //// New section start
+            //Console.Clear();
+            //Console.ForegroundColor = ConsoleColor.Green;
+            //Console.WriteLine("--------------- Sets And Dictionaries ---------------");
+            //Console.ForegroundColor = ConsoleColor.Blue; 
+            ////First Set of exapmples
+            //Console.WriteLine("//// Hashsets");
+            ////just for console seperation
+            //Console.ForegroundColor = ConsoleColor.White;
 
-                //start
+            ////start
 
-                // creating a Hashset, from the List, passing in the List to the constructor
-                HashSet<Student> students = new HashSet<Student>(new List<Student>
-                {
-                    new Student() { Name = "Sally", GradeLevel = 3 },
-                    new Student() { Name = "Bob", GradeLevel = 3 },
-                    new Student() { Name = "Sally", GradeLevel = 2 },
-                });
+            //// creating a Hashset, from the List, passing in the List to the constructor
+            //HashSet<Student> students = new HashSet<Student>(new List<Student>
+            //{
+            //    new Student() { Name = "Sally", GradeLevel = 3 },
+            //    new Student() { Name = "Bob", GradeLevel = 3 },
+            //    new Student() { Name = "Sally", GradeLevel = 2 },
+            //});
 
-                //adding a new student to the list
-                Student joe = new Student() { Name = "Joe", GradeLevel = 2 };
+            ////adding a new student to the list
+            //Student joe = new Student() { Name = "Joe", GradeLevel = 2 };
 
-                //adding a new student to the list
-                students.Add(joe);
+            ////adding a new student to the list
+            //students.Add(joe);
 
-                // a hashset does not allow duplicates
+            //// a hashset does not allow duplicates
 
-                // creating a new dupe joe
-                Student duplicateJoe = new Student() { Name = "Joe", GradeLevel = 2 };
+            //// creating a new dupe joe
+            //Student duplicateJoe = new Student() { Name = "Joe", GradeLevel = 2 };
 
-                // adding this joe to the list
-                students.Add(duplicateJoe);
+            //// adding this joe to the list
+            //students.Add(duplicateJoe);
 
-                // showing their hash codes
-                // changed to contains using the Iinterface
-                if (students.Contains(joe))
-                {
-                    // contains on a hashset looks at the Hashcodes on aa hashset
-                    Console.WriteLine("finding joe!....");
-                }
+            //// showing their hash codes
+            //// changed to contains using the Iinterface
+            //if (students.Contains(joe))
+            //{
+            //    // contains on a hashset looks at the Hashcodes on aa hashset
+            //    Console.WriteLine("finding joe!....");
+            //}
 
-                // BUT we want to say that both of these objects are the same... So
-                // we will override this method and fix it.
-                // Creating new method, GetHashCode()
+            //// BUT we want to say that both of these objects are the same... So
+            //// we will override this method and fix it.
+            //// Creating new method, GetHashCode()
 
 
-                // $ = Interpolated Strings
-                foreach (Student student in students)
-                {
-                    Console.WriteLine($"{student.Name} is in grade {student.GradeLevel}");
-                }
+            //// $ = Interpolated Strings
+            //foreach (Student student in students)
+            //{
+            //    Console.WriteLine($"{student.Name} is in grade {student.GradeLevel}");
+            //}
 
-                // counting 
-                Console.WriteLine("how many in Hashset? " + students.Count());
+            //// counting 
+            //Console.WriteLine("how many in Hashset? " + students.Count());
 
 
 
             #endregion
+
+            #region "Practice Properties in C#"
+
+            //1st Challenge
+            //--------------------------------------------------
+            //1.In the MediaType base class and Album, Book, and Movie subclasses, replace each public class field with a property.
+            // a) Use either the regular C# property syntax or the more concise auto-implemented property syntax.
+            //  b) Use private setters for fields that should be readonly and initialize those properties via the constructor.
+            //2. In the MediaType base class, initialize the `Loanee` and `OnLoan` properties inline to an empty string (i.e. `""` or `string.Empty`) and `false` respectively.
+
+            //2nd Challenge
+            //--------------------------------------------------
+            //1. In each media type subclass, replace the `GetDisplayText()` method with a `DisplayText` computed property.
+            //  a) Use either the regular C# property syntax or the more concise expression-bodied property syntax.        
+            //2. In the MediaLibrary class, add a `NumberOfItems` computed property that returns an integer representing the number of items in the media library.
+            //3. Update the Program.cs file as needed.
+            //  a) Also add code to the `Main()` method in order to test the new MediaLibrary `NumberOfItems` computed property.
+
+
+            // New section start
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("--------------- Practice Properties in C# ---------------");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            //First Set of exapmples
+            Console.WriteLine("//// Running the 2 challenge");
+            //just for console seperation
+            Console.ForegroundColor = ConsoleColor.White;
+
+            //start
+            try
+            {
+                var mediaLibrary = new MediaLibrary(new MediaType[]
+                {
+                    new Album("Yellow Submarine", "The Beatles"),
+                    new Album("The Wall", "Pink Floyd"),
+                    new Album("Pet Sounds", "The Beach Boys"),
+                    new Book("Moby-Dick", "Herman Melville"),
+                    new Movie("Lawrence of Arabia", "David Lean")
+                });
+
+                DetectMediaType(mediaLibrary.GetItemAt(0));
+                DetectMediaType(mediaLibrary.GetItemAt(1));
+                DetectMediaType(mediaLibrary.GetItemAt(2));
+                DetectMediaType(mediaLibrary.GetItemAt(3));
+                DetectMediaType(mediaLibrary.GetItemAt(4));
+
+                Display(mediaLibrary.GetItemAt(0));
+                Display(mediaLibrary.GetItemAt(1));
+                Display(mediaLibrary.GetItemAt(2));
+                Display(mediaLibrary.GetItemAt(3));
+                Display(mediaLibrary.GetItemAt(4));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
+            }
         }
+
+        static void Display(MediaType item)
+        {
+            if (item == null)
+            {
+                return;
+            }
+
+            if (item is Album)
+            {
+                Console.WriteLine(((Album)item).GetDisplayText());
+            }
+            else if (item is Book)
+            {
+                Console.WriteLine(((Book)item).GetDisplayText());
+            }
+            else if (item is Movie)
+            {
+                Console.WriteLine(((Movie)item).GetDisplayText());
+            }
+            else
+            {
+                throw new Exception("Unexpected media subtype encountered.");
+            }
+        }
+
+        static void DetectMediaType(MediaType item)
+        {
+            if (item == null)
+            {
+                return;
+            }
+
+            if (item is Album)
+            {
+                Console.WriteLine(item.Title + " is an album!");
+            }
+            else if (item is Book)
+            {
+                Console.WriteLine(item.Title + " is a book!");
+            }
+            else if (item is Movie)
+            {
+                Console.WriteLine(item.Title + " is a movie!");
+            }
+            else
+            {
+                throw new Exception("Unexpected media subtype encountered.");
+            }
+        }
+
+
+
+        #endregion
 
 
         // Test 1
@@ -415,12 +526,12 @@ namespace C_Sharp_PracticeSessions
                 //Console.WriteLine("{0}^{1} = {2}", value, power, (long)Math.Pow(value, power));
 
                 //Console.WriteLine("{0}^{1} = {2:N0} (0x{2:X})", value, power, (long)Math.Pow(value, power));
-            end = (int)Math.Pow(value, power);
+                end = (int)Math.Pow(value, power);
                 list.Add(end);
-            }               
+            }
 
             return list;
         }
-       
+
     }
-}
+}    

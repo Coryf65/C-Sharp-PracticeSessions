@@ -6,17 +6,33 @@ using System.Threading.Tasks;
 
 namespace C_Sharp_PracticeSessions
 {
-    class Movie
+    class Movie : MediaType
     {
-        // fields
-        public string Title;
-        public string Director;
+        public readonly string Director;
 
-        // constructor
         public Movie(string title, string director)
+            : base(title)
         {
-            Title = title;
             Director = director;
+        }
+
+        public string GetDisplayText()
+        {
+            string text = "Movie: " + Title + " by " + Director;
+
+            if (OnLoan)
+            {
+                if (!string.IsNullOrEmpty(Loanee))
+                {
+                    text += " (Currently on loan to " + Loanee + ")";
+                }
+                else
+                {
+                    text += " (Currently on loan)";
+                }
+            }
+
+            return text;
         }
     }
 }

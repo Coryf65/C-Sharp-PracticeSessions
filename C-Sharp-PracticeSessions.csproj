@@ -63,6 +63,7 @@
     <Compile Include="Album.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="Cell.cs" />
+    <Compile Include="MediaType.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
